@@ -32,7 +32,7 @@
 
     header h1 {
       font-size: 2.5rem;
-      color: #000000;
+      color: #ffffff;
     }
 
     header p {
@@ -69,12 +69,7 @@
       margin-bottom: 10px;
       color: #12d6c2;
     }
-     h5 {
-      font-size: 15px;
-      text-align: right;
-      margin-top: 12px;
-      color: #ffffff;
-    }
+   
     img {
       width: 100%;
       max-width: 100%;
@@ -98,6 +93,59 @@
       text-decoration: underline;
     }
 
+    .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .videos-grid video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+ }
+
+.video-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.liquido {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  z-index: 1000;
+
+  background-image:
+    linear-gradient(270deg, #12d6c2, #28ed7d, #ee0000, #ff6608),
+    linear-gradient(to bottom, rgba(213, 19, 191, 0.2), rgba(103, 8, 108, 0.2));
+
+  background-blend-mode: soft-light;
+  background-size: 800% 800%;
+  animation: liquidoMover 10s ease infinite;
+
+  border-bottom: 1px solid rgba(191, 44, 44, 0.3);
+  opacity: 0.55;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+}
+
+/* Evita que el contenido quede debajo del cuadro */
+body {
+  padding-top: 60px;
+}
+
+@keyframes liquidoMover {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
     /* Responsive */
     @media (max-width: 600px) {
       header h1 {
@@ -116,9 +164,9 @@
   </style>
 </head>
 <body>
+  <div class="liquido"></div>
   <header>
     <h1>Axl Javier Membreño Moreno</h1>
-    <h5>Diseñador gráfico en formación, creativo y apasionado por la animación.</h5>
   </header>
 
   <section>
@@ -150,7 +198,7 @@ Mi objetivo es consolidarme como un diseñador integral, continuar aprendiendo y
     </div>
   </section>
 
-   <section style="border: 2px solid #ffffff; border-radius: 15px; background-color: #ffffff;">
+   <section style="border: 1px solid #ffffff; border-radius: 15px; background-color: #ffffff;">
     <h3>Logofolio</h3>
     <div style="display: flex;">
     <div style="flex: 1; padding: 10px; border: 2px; solid #ccc; text-align: center;">
@@ -188,29 +236,28 @@ Mi objetivo es consolidarme como un diseñador integral, continuar aprendiendo y
   
 
   <section>
-    <h3>Animación</h3>
-    <div style="display: flex;">
-    <div style="flex: 1; padding: 10px; border: 2px; solid #ccc; text-align: center;">
-    <video width="100" height="360" controls>
-        <source src="animaciones/avion.mp4" alt="Infografía 1"  type="video/mp4" >
+  <h3>Animación</h3>
+  <div class="videos-grid">
+    <video autoplay muted loop playsinline>
+      <source src="animaciones/avion.mp4" type="video/mp4">
     </video>
-    </div>
- <div style="flex: 1; padding: 10px; border: 2px; solid #ccc; text-align: center;">
-  <video width="100" height="360" controls>
-        <source src="animaciones/final de año.mp4" alt="Infografía 1"  type="video/mp4" >
+    <video autoplay muted loop playsinline>
+      <source src="animaciones/final de año.mp4" type="video/mp4">
     </video>
-    </div>
-    <div style="flex: 1; padding: 10px; border: 2px; solid #ccc; text-align: center;">
-      <video width="100" height="360" controls>
-        <source src="animaciones/rayos.mp4" alt="Infografía 1"  type="video/mp4" >
+    <video class="subir-rayos" autoplay muted loop playsinline>
+      <source src="animaciones/rayos.mp4" type="video/mp4">
     </video>
-    </div>
- <div style="flex: 1; padding: 10px; border: 2px; solid #ccc; text-align: center;">
-      <video width="100" height="360" controls>
-        <source src="animaciones/vueltas y logos.mp4" alt="Infografía 1"  type="video/mp4" >
+    <video autoplay muted loop playsinline>
+      <source src="animaciones/vueltas y logos.mp4" type="video/mp4">
     </video>
-    </div>
-  </section>
+       <video autoplay muted loop playsinline>
+      <source src="animaciones/tierra explota.mp4" type="video/mp4">
+    </video>
+     <video autoplay muted loop playsinline>
+      <source src="animaciones/square mov. diferente.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
 
    <section>
     <h3>Audiovisual</h3>
