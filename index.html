@@ -173,11 +173,75 @@ body {
   text-decoration: underline;
 }
 .infografia-grande {
-  transform: scale(1.1); /* Aumenta un 30% */
+  transform: scale(1.1); /* Aumenta un 28% */
   transition: transform 0.3s ease-in-out;
-  margin-top: 22px;
+  margin-top: 23.5px;
   border-radius: 10px;
 }
+.logofolio-collage {
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  background-color: #ffffff;
+  padding: 30px 0;
+  position: relative;
+  text-align: center;
+}
+
+.logo-collage-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.imagen-collage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Estilos generales para los botones */
+.btn-logo {
+  position: absolute;
+  padding: 1.9px 8px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 9.2px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-logo:hover {
+  background-color: #12d6c2;
+  color: #000000;
+}
+.flash {
+  background-color: #ffffff !important;
+  color: #04625c !important;
+}
+
+/* Posiciones individuales (ajústalas según tus logos) */
+.posicion1 {
+  top: 44.8%;
+  left: 15%;
+}
+
+.posicion2 {
+  top: 45.8%;
+  left: 70%;
+}
+
+.posicion3 {
+  top: 100%;
+  left: 15%;
+}
+
+.posicion4 {
+  top: 100%;
+  left: 70%;
+}
+
 
 
     /* Responsive */
@@ -234,14 +298,25 @@ Mi objetivo es consolidarme como un diseñador integral, continuar aprendiendo y
     </div>
   </section>
 
-   <section style="border: 1px solid #ffffff; border-radius: 15px; background-color: #ffffff;">
-    <h3>Logofolio</h3>
-    <div style="display: flex;">
-    <div style="flex: 1; padding: 10px; border: 2px; solid #ccc; text-align: center;">
-    <img src="logos/1x/Recurso 5.png" alt="logo 1" >
-    </div>
-    </div>
-  </section>
+<section class="logofolio-collage">
+  <h3>Logofolio</h3>
+  <div class="logo-collage-container">
+    <img src="logos/1x/Recurso 5.png" alt="Logos" class="imagen-collage">
+
+    <!-- Botón para Logo 1 -->
+    <a href="logos/proceso1.html" class="btn-logo posicion1">Ver mas</a>
+   
+    <!-- Botón para Logo 2 -->
+    <a href="logos/proceso2.html" class="btn-logo posicion2">Ver mas</a>
+   
+    <!-- Botón para Logo 3 -->
+    <a href="logos/proceso3.html" class="btn-logo posicion3">Ver mas</a>
+   
+    <!-- Botón para Logo 4 -->
+    <a href="logos/proceso4.html" class="btn-logo posicion4" >Ver mas</a>
+   
+  </div>
+</section>
 
     <section>
     <h3>Posters</h3>
@@ -322,5 +397,18 @@ Mi objetivo es consolidarme como un diseñador integral, continuar aprendiendo y
     <a href="https://www.linkedin.com/in/tuusuario/" target="_blank">https://acortar.link/3DxTQs</a></p>
   </div>
 </section>
+<script>
+  const botones = document.querySelectorAll('.btn-logo');
+
+  botones.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('flash');
+
+      setTimeout(() => {
+        btn.classList.remove('flash');
+      }, 150); // Duración del flash
+    });
+  });
+</script>
 </body>
 </html>
